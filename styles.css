@@ -32,11 +32,11 @@ a {
 
 body {
   height: 100vh;
+  margin: 0 10px;
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--grey); */
   background-image: conic-gradient(from 0deg at 0% 0%, #e2c0fe 0%, #86d9fd 100%);
 }
 
@@ -202,4 +202,16 @@ input:has(~ .active) {
 .submitBtn:hover {
   border: 1px solid #aa00ff;
   box-shadow: 0px 0px 6px 2px rgba(183, 0, 255, 0.1);
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .hero p {
+    margin-bottom: 12px;
+  }
+  .formContainer {
+    padding: 20px;
+  }
 }
