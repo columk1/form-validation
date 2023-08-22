@@ -83,13 +83,6 @@ const getZipError = () => {
 }
 
 function validatePassword() {
-  if (password.value != confirm_password.value) {
-    // password.setCustomValidity("Passwords Don't Match")
-    confirm_password.setCustomValidity("Passwords Don't Match")
-  } else {
-    confirm_password.setCustomValidity('')
-    password.setCustomValidity('')
-  }
   if (password.validity.valid) {
     passwordError.className = 'error'
     passwordError.previousElementSibling.className = 'errorIcon activeIcon'
@@ -99,6 +92,17 @@ function validatePassword() {
     passwordError.className = 'error active'
     passwordError.previousElementSibling.firstChild.src = './assets/error.svg'
     passwordError.previousElementSibling.className = 'errorIcon activeIcon'
+  }
+  if (confirm_password.value) validateConfirmPassword()
+}
+
+function validateConfirmPassword() {
+  if (password.value != confirm_password.value) {
+    // password.setCustomValidity("Passwords Don't Match")
+    confirm_password.setCustomValidity("Passwords Don't Match")
+  } else {
+    confirm_password.setCustomValidity('')
+    password.setCustomValidity('')
   }
   if (confirm_password.validity.valid) {
     confirm_passwordError.className = 'error'
@@ -124,7 +128,7 @@ email.addEventListener('input', validateEmail)
 country.addEventListener('input', validateCountry)
 zip.addEventListener('input', validateZip)
 password.onkeyup = validatePassword
-confirm_password.onkeyup = validatePassword
+confirm_password.onkeyup = validateConfirmPassword
 
 form.addEventListener('submit', (event) => {
   // if the email field is valid, we let the form submit
