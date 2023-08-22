@@ -26,7 +26,7 @@
           <p>Already have an account? <a href="">Log in</a></p>
 
           <div class="inputContainer">
-            <label for="email" class="label">Email</label>
+            <label for="email" class="label">Email <span class="red">*</span></label>
             <input
               type="email"
               name="email"
@@ -41,7 +41,7 @@
           </div>
 
           <div class="inputContainer">
-            <label for="country" class="label">Country</label>
+            <label for="country" class="label">Country <span class="red">*</span></label>
             <input
               type="text"
               name="country"
@@ -56,14 +56,16 @@
           </div>
 
           <div class="inputContainer">
-            <label for="zip" class="label" data-help=" (XXX XXX) ">ZIP Code</label>
+            <label for="zip" class="label" data-help=" (XXX XXX) "
+              >ZIP Code <span class="red">*</span></label
+            >
             <input type="text" name="zip" id="zip" class="input" placeholder="a" required />
             <p class="errorIcon"><img src="./assets/error.svg" alt="error icon" /></p>
             <span class="error">Error message</span>
           </div>
 
           <div class="inputContainer">
-            <label for="password" class="label">Password</label>
+            <label for="password" class="label">Password <span class="red">*</span></label>
             <input
               type="password"
               name="password"
@@ -79,7 +81,7 @@
 
           <div class="inputContainer">
             <label for="confirm_password" class="label" data-help=" (passwords don't match) "
-              >Confirm Password</label
+              >Confirm Password <span class="red">*</span></label
             >
             <input
               type="password"
@@ -92,6 +94,7 @@
             <p class="errorIcon"><img src="./assets/error.svg" alt="error icon" /></p>
             <span class="error">Error message</span>
           </div>
+          <div class="required"><span class="red">*</span> required</div>
 
           <input type="submit" class="submitBtn" value="Create Account" />
         </form>

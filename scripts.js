@@ -124,11 +124,35 @@ const getPasswordError = () => {
     : confirm_password.validationMessage
 }
 
-email.addEventListener('input', validateEmail)
-country.addEventListener('input', validateCountry)
-zip.addEventListener('input', validateZip)
-password.onkeyup = validatePassword
-confirm_password.onkeyup = validateConfirmPassword
+email.addEventListener('change', validateEmail)
+email.onchange = () => {
+  email.removeEventListener('change', validateEmail)
+  email.addEventListener('input', validateEmail)
+}
+
+country.addEventListener('change', validateCountry)
+country.onchange = () => {
+  country.removeEventListener('change', validateCountry)
+  country.addEventListener('input', validateCountry)
+}
+
+zip.addEventListener('change', validateZip)
+zip.onchange = () => {
+  zip.removeEventListener('change', validateZip)
+  zip.addEventListener('input', validateZip)
+}
+
+password.addEventListener('change', validatePassword)
+password.onchange = () => {
+  password.removeEventListener('change', validatePassword)
+  password.addEventListener('input', validatePassword)
+}
+
+confirm_password.addEventListener('change', validateConfirmPassword)
+confirm_password.onchange = () => {
+  confirm_password.removeEventListener('change', validateConfirmPassword)
+  confirm_password.addEventListener('input', validateConfirmPassword)
+}
 
 form.addEventListener('submit', (event) => {
   // if the email field is valid, we let the form submit

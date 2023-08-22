@@ -152,6 +152,7 @@ input:focus:invalid ~ .error {
 
 input:focus:invalid {
   outline: none;
+  background-color: inherit;
 }
 
 input:has(~ .active) {
@@ -186,6 +187,16 @@ input:has(~ .active) {
 
 .active ~ input {
   border: 1px solid var(--red);
+}
+
+.red {
+  color: var(--red);
+}
+
+.required {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--grey);
 }
 
 .submitBtn {
